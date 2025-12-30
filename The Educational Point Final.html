@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Educational Point</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; }
+    header { background:#0077cc; color:#fff; padding:20px; text-align:center; }
+    nav ul { list-style:symbols(*); display:flex; justify-content:center; padding:0; margin:0; }
+    nav ul li { margin:0 15px; }
+    nav ul li a { color:#fff; text-decoration:none; font-weight:bold; }
+    section { padding:40px 20px; max-width:1100px; margin:auto; }
+    .hero { background:#e3780d; text-align:center; padding:20px 10px; }
+    .courses, .about, .plans, .contact, .activities, .placements, .gallery, .team, .testimonials, .faq, .blog, .appointment { margin-top:40px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
+    .card { background:#fff; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center; }
+    footer { background:#333; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+    form input, form textarea, form select { width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:4px; }
+    form button { background:#0077cc; color:#fff; border:none; padding:10px 20px; border-radius:4px; cursor:pointer; }
+    .gallery img, .team img { width:100%; border-radius:8px; }
+    .testimonial { background:#f9f9f9; border-left:5px solid #0077cc; padding:20px; margin:20px 0; border-radius:6px; text-align:left; }
+    .testimonial p { font-style:italic; }
+    .testimonial h4 { margin-top:10px; color:#0077cc; }
+    .faq-item { margin-bottom:20px; }
+    .faq-item h3 { margin-bottom:8px; color:#0077cc; }
+    .blog-post { border-bottom:1px solid #ddd; padding:20px 0; }
+    .blog-post h3 { color:#0077cc; }
+    .blog-post p { margin-top:10px; }
+  </style>
+</head>
+
+<style>
+
+  /* Sidebar container (Left side) */
+  .notice-board{
+    position:fixed;
+    left:7px; top:35px; bottom:7px;
+    width:150px; max-height:calc(50vh - 50px);
+    overflow-y:auto;
+    background:#ff3cac;
+    border-radius:14px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.2);
+    padding:14px;
+  }
+
+  .notice-board h2{
+    margin:0 0 10px;
+    font-size:18px;
+    text-align:center;
+    color:#0b72b9;
+  }
+
+  /* Individual notice */
+  .notice-item{
+    position:relative;
+    margin-bottom:12px;
+    padding:12px;
+    border-radius:12px;
+    background:none;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Gradient border glow */
+  .notice-item::before{
+    content:"";
+    position:absolute; inset:0;
+    border-radius:12px;
+    padding:2px;
+    background:linear-gradient(90deg,#ff3cac,#7844ff,#00d2ff,#7fff6a,#ffd54f);
+    background-size:400% 400%;
+    animation:rainbow 8s linear infinite;
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor; mask-composite:exclude;
+  }
+
+  .notice-item h3{margin:0;font-size:15px;color:#222}
+  .notice-item p{margin:4px 0 0;font-size:13px;color:#444}
+  .notice-item a{display:inline-block;margin-top:6px;font-size:13px;font-weight:600;
+    color:#0b72b9;text-decoration:none}
+  .notice-item a:hover{text-decoration:underline}
+
+  @keyframes rainbow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+</style>
+</head>
+<body>
+
+<!-- Notice Board (Left Sidebar) -->
+<div class="notice-board">
+  <h2>📢 Important Notices</h2>
+
+  <div class="notice-item">
+    <h3>⚡ Admissions Open — 2026 Batch</h3>
+    <p>Apply before 30 Sep 2025. Limited seats available.</p>
+    <a href="https://theeducationalpoint.com/admissions" target="_blank">Read More</a>
+  </div>
+
+  <div class="notice-item">
+    <h3>📢 Exam Schedule Released</h3>
+    <p>Mid-term exam starts 15 Oct 2025.</p>
+    <a href="https://theeducationalpoint.com/exams" target="_blank">Read More</a>
+  </div>
+
+  <div class="notice-item">
+    <h3>🎓 Scholarship Applications</h3>
+    <p>Submit forms by 10 Nov 2025.</p>
+    <a href="https://theeducationalpoint.com/scholarships" target="_blank">Read More</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+<body>
+  <header>
+    <h1>The Educational Point</h1>
+    <p>Empowering Students for a Bright Future</p>
+    <nav>
+      <ul>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#placements">Placements</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#team">Faculty</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#appointment">Appointment</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019958f27b7477818284f663ab423471c069/embed.js'>
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68c58a885188f819293b8840/1j51qa9kq';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+  <section class="hero">
+    <h2>Welcome to The Educational Point</h2>
+    <p>Your gateway to quality education and career success.</p>
+  </section>
+
+  <section id="courses" class="courses">
+    <h2>Our Courses</h2>
+    <div class="grid">
+      <div class="card"><h3>Web Development</h3><p>Learn HTML, CSS, JavaScript, and frameworks.</p></div>
+      <div class="card"><h3>Digital Marketing</h3><p>SEO, SEM, and social media strategies.</p></div>
+      <div class="card"><h3>Data Science</h3><p>Python, machine learning, and analytics.</p></div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>The Educational Point is a trusted institute dedicated to empowering students with knowledge, skills, and confidence to achieve academic and professional success. Our mission is to provide high-quality education through expert instructors, innovative teaching methods, and practical learning experiences.
+
+At The Educational Point, we believe that every learner has the potential to shine. That’s why we focus on:
+
+📘 Comprehensive Courses – covering academic subjects, skill development, and career-oriented training.
+
+👩‍🏫 Expert Faculty – highly qualified instructors with real-world experience.
+
+💻 Modern Learning Tools – online resources, interactive sessions, and flexible study options.
+
+🎯 Career Support – guidance, workshops, and certifications to shape your future.
+
+Whether you are preparing for exams, building new skills, or aiming for career growth, The Educational Point is your partner in success. Join us and take the first step towards a brighter future!</p>
+  </section>
+
+  <section id="plans" class="plans">
+    <h2>Our Plans</h2>
+    <div class="grid">
+      <div class="card"><h3>Basic</h3><p>₹4999 / 3 months</p></div>
+      <div class="card"><h3>Standard</h3><p>₹8999 / 6 months</p></div>
+      <div class="card"><h3>Premium</h3><p>₹14999 / 12 months</p></div>
+    </div>
+  </section>
+
+  <section id="activities" class="activities">
+    <h2>Student Activities</h2>
+    <div class="grid">
+      <div class="card"><h3>Workshops</h3><p>Hands-on sessions to sharpen skills.</p></div>
+      <div class="card"><h3>Seminars</h3><p>Expert talks and industry insights.</p></div>
+      <div class="card"><h3>Competitions</h3><p>Hackathons, quizzes, and project contests.</p></div>
+    </div>
+  </section>
+
+  <section id="placements" class="placements">
+    <h2>Placements</h2>
+    <p>We are proud to have partnered with top companies to place our students in leading roles. Our placement cell guides students with resume building, mock interviews, and industry connections.</p>
+    <div class="grid">
+      <div class="card"><h3>1000+ Students</h3><p>Successfully Placed</p></div>
+      <div class="card"><h3>200+ Companies</h3><p>Our Recruitment Partners</p></div>
+      <div class="card"><h3>95% Success Rate</h3><p>In Campus Interviews</p></div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="grid">
+      <img src="https://via.placeholder.com/300x200" alt="Activity 1">
+      <img src="https://via.placeholder.com/300x200" alt="Activity 2">
+      <img src="https://via.placeholder.com/300x200" alt="Activity 3">
+    </div>
+  </section>
+
+  <section id="team" class="team">
+    <h2>Our Faculty</h2>
+    <p>Meet our experienced and dedicated mentors who guide students at every step.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/200" alt="Faculty 1">
+        <h3>Dr. Anjali Sharma</h3>
+        <p>Head of Computer Science</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200" alt="Faculty 2">
+        <h3>Mr. Rajesh Verma</h3>
+        <p>Digital Marketing Expert</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200" alt="Faculty 3">
+        <h3>Ms. Neha Kapoor</h3>
+        <p>Soft Skills & Communication Trainer</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>Student Testimonials</h2>
+    <div class="testimonial">
+      <p>“The Educational Point has completely transformed my career. The faculty and courses are top-notch.”</p>
+      <h4>— Rohan Gupta, Web Developer</h4>
+    </div>
+    <div class="testimonial">
+      <p>“Thanks to the placement support, I landed my dream job in digital marketing.”</p>
+      <h4>— Priya Mehta, Digital Marketer</h4>
+    </div>
+    <div class="testimonial">
+      <p>“Workshops and practical sessions really boosted my confidence.”</p>
+      <h4>— Arjun Singh, Data Analyst</h4>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>Q: What is the admission process?</h3>
+      <p>A: You can apply online through our website or visit our campus for offline registration.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Q: Do you provide placement assistance?</h3>
+      <p>A: Yes, we have a dedicated placement cell that provides resume building, interview preparation, and job opportunities.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Q: Are the courses available online?</h3>
+      <p>A: Yes, most of our courses are available both online and offline for flexible learning.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Q: Do you offer free demo classes?</h3>
+      <p>A: Yes, we offer demo sessions so you can experience our teaching methods before enrolling.</p>
+    </div>
+  </section>
+
+  <section id="blog" class="blog">
+    <h2>Latest Blog & News</h2>
+    <div class="blog-post">
+      <h3>5 Tips to Succeed in Web Development</h3>
+      <p>Learn the key skills and best practices to excel as a web developer in today’s competitive world.</p>
+    </div>
+    <div class="blog-post">
+      <h3>Why Digital Marketing is the Future</h3>
+      <p>Discover how digital marketing can boost your career and open up endless opportunities.</p>
+    </div>
+    <div class="blog-post">
+      <h3>Data Science: The Hottest Career of the Decade</h3>
+      <p>Explore why data science is in demand and how you can become a successful data analyst.</p>
+    </div>
+  </section>
+
+  <section id="appointment" class="appointment">
+    <h2>Book an Appointment</h2>
+    <p>Schedule a meeting with our counselors to discuss courses, admissions, or career guidance.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Phone" required>
+      <input type="Country" placeholder="Country" required>
+      <input type="State" placeholder="State" required>
+      <input type="District" placeholder="District" required>
+      <input type="Pin" placeholder="Pin Code" required>
+      <select required>
+        <option value="">Select Course</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Digital Marketing">Digital Marketing</option>
+        <option value="Data Science">Data Science</option>
+        <option value="Other">Other</option>
+        <input type="text" placeholder="If Other" required>
+      </select>
+      <input type="date" required>
+      <input type="time" required>
+      <button type="submit">Book Appointment</button>
+    </form>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjxjM3XkFFhikl-snrdxj2lQyMqLJmXE9p-8Ig0zO5MaMzSw/viewform?embedded=true" 
+          width="100%" 
+          height="800" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">Loading…</iframe>
+          <form action="https://docs.google.com/forms/d/1ZKjDJBppyFJDLQyNYGil5OlU4JZhpbdqIcCEN9u__Wc/edit" method="POST"></form>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+       <input type="text" placeholder="Your Mobile Number" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Your Country" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+<?php
+$zip = new ZipArchive();
+$filename = "educational_point.zip";
+
+$conn = new mysqli("localhost", "root", "", "educational_point");
+
+if (\$_SERVER["REQUEST_METHOD"] == "POST") {
+    \$username = \$_POST['username'];
+    \$password = password_hash(\$_POST['password'], PASSWORD_DEFAULT);
+
+    \$sql = "INSERT INTO users (username, password) VALUES ('\$username', '\$password')";
+  
+
+?>
+<h2>Register</h2>
+<form method="POST">
+    <input type="text" name="username" placeholder="Enter Username" required><br>
+    <input type="password" name="password" placeholder="Enter Password" required><br>
+    <button type="submit">Register</button>
+</form>
+<p>Already have an account? <a href="customer-register-portal.firebaseapp.com">Login Here</a></p>
+<h2>Login</h2>
+<form method="POST">
+     <input type="text" name="username" placeholder="Enter Username" required><br>
+    <input type="password" name="password" placeholder="Enter Password" required><br>
+    <button type="submit">Login</button>
+</form>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAWhFe11ehmoaNsy44oyV6LOFgmlNZfLXc",
+    authDomain: "customer-register-portal.firebaseapp.com",
+    projectId: "customer-register-portal",
+    storageBucket: "customer-register-portal.firebasestorage.app",
+    messagingSenderId: "928417288848",
+    appId: "1:928417288848:web:0aa063ee591c91bf07be15",
+    measurementId: "G-ZZ4CCY8GTX"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<p>Don't have an account? <a href="register.php">Register Here</a></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Register</title>
+</head>
+<body>
+
+<h2>Customer Registration</h2>
+
+<form id="registerForm">
+  <input type="email" id="email" placeholder="Email" required><br><br>
+  <input type="password" id="password" placeholder="Password" required><br><br>
+  <button type="submit">Register</button>
+</form>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+
+<script>
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAWhFe11ehmoaNsy44oyV6LOFgmlNZfLXc",
+  authDomain: "customer-register-portal.firebaseapp.com",
+  projectId: "customer-register-portal",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.getElementById("registerForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      alert("Registration Successful!\nLogin ID: " + email);
+      window.location.href = "login.php";
+    })
+    .catch(error => alert(error.message));
+});
+</script>
+
+</body>
+</html>
+<h2>Customer Login</h2>
+
+<form id="loginForm">
+  <input type="email" id="email" placeholder="Email" required><br><br>
+  <input type="password" id="password" placeholder="Password" required><br><br>
+  <button type="submit">Login</button>
+</form>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAWhFe11ehmoaNsy44oyV6LOFgmlNZfLXc",
+  authDomain: "customer-register-portal.firebaseapp.com",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  signInWithEmailAndPassword(auth, email.value, password.value)
+    .then(() => window.location.href = "dashboard.php")
+    .catch(() => alert("Invalid Login Details"));
+});
+</script>
+<?php
+session_start();
+$data = json_decode(file_get_contents("php://input"), true);
+
+$_SESSION['user_email'] = $data['email'];
+$_SESSION['user_uid']   = $data['uid'];
+
+echo "Session Set";
+?>
+<?php
+session_start();
+if(!isset($_SESSION['user_email'])){
+    header("Location: login.php");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Welcome 🎉</h2>
+<p><b>Email:</b> <?php echo $_SESSION['user_email']; ?></p>
+
+<a href="logout.php">Logout</a>
+
+</body>
+</html>
+<?php
+session_start();
+session_destroy();
+header("Location: login.php");
+exit;
+?>
+/customer-portal
+│── login.php
+│── register.php
+│── dashboard.php
+│── logout.php
+│── set_session.php
+
+<h2>Dashboard</h2>
+<p>This is a protected area accessible only to logged-in users.</p>
+<?php
+session_start();
+session_destroy();
+header("Location: login.php");
+exit();
+?>
+
+  <footer>
+  📞 Customer Care: <a href="tel:+917484995551">+91 7484995551</a>  
+  | ✉️ Email: <a href="mailto:support@theeducationalpoint.com">support@theeducationalpoint.com</a>
+</footer>
+  <footer>
+    <p>&copy; 2025 The Educational Point. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
