@@ -38,7 +38,7 @@
     left:7px; top:35px; bottom:7px;
     width:150px; max-height:calc(50vh - 50px);
     overflow-y:auto;
-    background:#ff3cac;
+    background:#transparent;
     border-radius:14px;
     box-shadow:0 8px 30px rgba(0,0,0,0.2);
     padding:14px;
@@ -48,7 +48,7 @@
     margin:0 0 10px;
     font-size:18px;
     text-align:center;
-    color:#0b72b9;
+    color:#7ee80d;
   }
 
   /* Individual notice */
@@ -69,16 +69,16 @@
     border-radius:12px;
     padding:2px;
     background:linear-gradient(90deg,#ff3cac,#7844ff,#00d2ff,#7fff6a,#ffd54f);
-    background-size:400% 400%;
+    background-size:300% 300%;
     animation:rainbow 8s linear infinite;
     -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
     -webkit-mask-composite:xor; mask-composite:exclude;
   }
 
-  .notice-item h3{margin:0;font-size:15px;color:#222}
-  .notice-item p{margin:4px 0 0;font-size:13px;color:#444}
+  .notice-item h3{margin:0;font-size:15px;color:#0e24e8}
+  .notice-item p{margin:4px 0 0;font-size:13px;color:#141be1}
   .notice-item a{display:inline-block;margin-top:6px;font-size:13px;font-weight:600;
-    color:#0b72b9;text-decoration:none}
+    color:#5cec13;text-decoration:none}
   .notice-item a:hover{text-decoration:underline}
 
   @keyframes rainbow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
@@ -92,13 +92,13 @@
 
   <div class="notice-item">
     <h3>⚡ Admissions Open — 2026 Batch</h3>
-    <p>Apply before 30 Sep 2025. Limited seats available.</p>
+    <p>Apply before 30 Sep 2026. Limited seats available.</p>
     <a href="https://theeducationalpoint.com/admissions" target="_blank">Read More</a>
   </div>
 
   <div class="notice-item">
     <h3>📢 Exam Schedule Released</h3>
-    <p>Mid-term exam starts 15 Oct 2025.</p>
+    <p>Mid-term exam starts 15 Jan 2026.</p>
     <a href="https://theeducationalpoint.com/exams" target="_blank">Read More</a>
   </div>
 
@@ -182,9 +182,9 @@ Whether you are preparing for exams, building new skills, or aiming for career g
   <section id="plans" class="plans">
     <h2>Our Plans</h2>
     <div class="grid">
-      <div class="card"><h3>Basic</h3><p>₹NA / 3 months</p></div>
-      <div class="card"><h3>Standard</h3><p>₹NA / 6 months</p></div>
-      <div class="card"><h3>Premium</h3><p>₹NA / 12 months</p></div>
+      <div class="card"><h3>Basic</h3><p>₹4999 / 3 months</p></div>
+      <div class="card"><h3>Standard</h3><p>₹8999 / 6 months</p></div>
+      <div class="card"><h3>Premium</h3><p>₹14999 / 12 months</p></div>
     </div>
   </section>
 
@@ -319,7 +319,7 @@ Whether you are preparing for exams, building new skills, or aiming for career g
           frameborder="0" 
           marginheight="0" 
           marginwidth="0">Loading…</iframe>
-          <form action="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjxjM3XkFFhikl-snrdxj2lQyMqLJmXE9p-8Ig0zO5MaMzSw/viewform?embedded=true" width="640" height="2567" frameborder="0" marginheight="0" marginwidth="0">लोड हो रहा है…</iframe>" method="POST"></form>
+          <form action="https://docs.google.com/forms/d/1ZKjDJBppyFJDLQyNYGil5OlU4JZhpbdqIcCEN9u__Wc/edit" method="POST"></form>
   </section>
 
   <section id="contact" class="contact">
@@ -332,188 +332,31 @@ Whether you are preparing for exams, building new skills, or aiming for career g
       <textarea rows="5" placeholder="Your Message"></textarea>
       <button type="submit">Send</button>
     </form>
-  </section>
-<i
-$zip = new ZipArchive();
-$filename = "educational_point.zip";
-
-$conn = new mysqli("localhost", "root", "", "educational_point");
-
-if (\$_SERVER["REQUEST_METHOD"] == "POST") {
-    \$username = \$_POST['username'];
-    \$password = password_hash(\$_POST['password'], PASSWORD_DEFAULT);
-
-    \$sql = "INSERT INTO users (username, password) VALUES ('\$username', '\$password')";
-  
-
-?>
-<h2>Register</h2>
-<form method="POST">
-    <input type="text" name="username" placeholder="Enter Username" required><br>
-    <input type="password" name="password" placeholder="Enter Password" required><br>
-    <button type="submit">Register</button>
-</form>
-<p>Already have an account? <a href="customer-register-portal.firebaseapp.com">Login Here</a></p>
-<h2>Login</h2>
-<form method="POST">
-     <input type="text" name="username" placeholder="Enter Username" required><br>
-    <input type="password" name="password" placeholder="Enter Password" required><br>
-    <button type="submit">Login</button>
-</form>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAWhFe11ehmoaNsy44oyV6LOFgmlNZfLXc",
-    authDomain: "customer-register-portal.firebaseapp.com",
-    projectId: "customer-register-portal",
-    storageBucket: "customer-register-portal.firebasestorage.app",
-    messagingSenderId: "928417288848",
-    appId: "1:928417288848:web:0aa063ee591c91bf07be15",
-    measurementId: "G-ZZ4CCY8GTX"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-<p>Don't have an account? <a href="register.php">Register Here</a></p>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Customer Register</title>
-</head>
-<body>
-
-<h2>Customer Registration</h2>
-
-<form id="registerForm">
-  <input type="email" id="email" placeholder="Email" required><br><br>
-  <input type="password" id="password" placeholder="Password" required><br><br>
-  <button type="submit">Register</button>
-</form>
-
-<script src=""https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
-
-<script>
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAWhFe11ehmoaNsy44oyV6LOFgmlNZfLXc",
-  authDomain: "customer-register-portal.firebaseapp.com",
-  projectId: "customer-register-portal",
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-document.getElementById("registerForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert("Registration Successful!\nLogin ID: " + email);
-      window.location.href = "login.php";
-    })
-    .catch(error => alert(error.message));
-});
-</script>
-
-</body>
-</html>
-<h2>Customer Login</h2>
-
-<form id="loginForm">
-  <input type="email" id="email" placeholder="Email" required><br><br>
-  <input type="password" id="password" placeholder="Password" required><br><br>
-  <button type="submit">Login</button>
-</form>
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAWhFe11ehmoaNsy44oyV6LOFgmlNZfLXc",
-  authDomain: "customer-register-portal.firebaseapp.com",
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-document.getElementById("loginForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  signInWithEmailAndPassword(auth, email.value, password.value)
-    .then(() => window.location.href = "dashboard.php")
-    .catch(() => alert("Invalid Login Details"));
-});
-</script>
 <?php
 session_start();
-$data = json_decode(file_get_contents("php://input"), true);
-
-$_SESSION['user_email'] = $data['email'];
-$_SESSION['user_uid']   = $data['uid'];
-
-echo "Session Set";
-?>
-<?php
-session_start();
-if(!isset($_SESSION['user_email'])){
-    header("Location: iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjxjM3XkFFhikl-snrdxj2lQyMqLJmXE9p-8Ig0zO5MaMzSw/viewform?embedded=true" width="640" height="2567" frameborder="0" marginheight="0" marginwidth="0">लोड हो रहा है…</iframe>" method="POST"></form>");
-    exit;
+if(!isset($_SESSION['username'])){
+    header("Location: login.php");
+    exit();
 }
 ?>
+<?php
+include("db.php");
+$username = $_SESSION['username'];
+$query = "SELECT * FROM users WHERE username='$username'";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+?>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Dashboard</title>
-</head>
-<body>
+<div style="float:right;">
+<img src="uploads/<?php echo $row['photo']; ?>" 
+width="40" height="40" 
+style="border-radius:50%; vertical-align:middle;">
 
-<h2>Welcome 🎉</h2>
-<p><b>Email:</b> <?php echo $_SESSION['user_email']; ?></p>
-
+<?php echo $row['username']; ?> |
 <a href="logout.php">Logout</a>
+</div>
 
-</body>
-</html>
-<?php
-session_start();
-session_destroy();
-header("Location: login.php");
-exit;
-?>
-/customer-portal
-│── login.php
-│── register.php
-│── dashboard.php
-│── logout.php
-│── set_session.php
-
-<h2>Dashboard</h2>
-<p>This is a protected area accessible only to logged-in users.</p>
-<?php
-session_start();
-session_destroy();
-header("Location: login.php");
-exit();
-?>
-
-  <footer>
+    <footer>
   📞 Customer Care: <a href="tel:+917484995551">+91 7484995551</a>  
   | ✉️ Email: <a href="mailto:support@theeducationalpoint.com">support@theeducationalpoint.com</a>
 </footer>
@@ -522,6 +365,3 @@ exit();
   </footer>
 </body>
 </html>
-
-
-
